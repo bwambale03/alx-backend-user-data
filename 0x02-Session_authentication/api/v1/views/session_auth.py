@@ -1,15 +1,15 @@
+# api/v1/views/session_auth.py
 #!/usr/bin/env python3
 """ Module of Session Auth
 """
-from api.v1.views import app_views
 from flask import abort, jsonify, request
 from models.user import User
 from os import getenv
+from api.v1.views import app_views  # Move imports as needed
 
 
 @app_views.route('/auth_session/logout',
-                 methods=['DELETE'],
-                 strict_slashes=False)
+                 methods=['DELETE'], strict_slashes=False)
 def session_logout() -> str:
     """ DELETE /api/v1/auth_session/logout
     JSON body:
