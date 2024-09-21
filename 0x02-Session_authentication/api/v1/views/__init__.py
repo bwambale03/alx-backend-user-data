@@ -15,3 +15,5 @@ from models.user import User
 from flask import Blueprint
 
 User.load_from_file()
+
+from api.v1.views.session_auth import session_login
