@@ -2,13 +2,16 @@
 #!/usr/bin/env python3
 """ DocDocDocDocDocDoc
 """
-from . import index
-from . import users
-from . import session_auth
 from flask import Blueprint
+
 
 app_views = Blueprint("app_views", __name__, url_prefix="/api/v1")
 
 # Import views here to avoid circular import issues
+from . import index
+from . import users
+from . import session_auth
+from models.user import User
+from flask import Blueprint
 
 User.load_from_file()
